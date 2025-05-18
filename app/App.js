@@ -13,26 +13,7 @@ export default function App() {
 
     <NavigationContainer>
       <stack.Navigator initialRouteName='AnimeUrp'>
-        <stack.Screen name='AnimeUrp' 
-        
-        options={{
-          title:'AnimeUrp',
-          // headerTitleAlign,
-          headerRight: () => {
-            return(
-          <Pressable onPress={()=>{alert('funciona')}}>
-            <Text style={{color: 'black'}}>Info</Text>
-          </Pressable>
-          )},
-          headerStyle:{}
-        }} 
-        component={HomeScreen}/>
-
-
-
-
-
-
+        <stack.Screen name='AnimeUrp' component={HomeScreen}/>
         <stack.Screen name='Dragon Ball' component={DBZScreen}/>
         <stack.Screen  name='capitulos' component={CapitulosAnime} />
       </stack.Navigator>
