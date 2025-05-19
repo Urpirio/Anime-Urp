@@ -20,7 +20,8 @@
         "foregroundImage": "./assets/LogoAnimeApp.jpg",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.urpiriodev.AnimeUrp"
     },
     "web": {
       "favicon": "./assets/LogoAnimeApp.jpg"
@@ -34,6 +35,12 @@
           "supportsPictureInPicture": true
         }
       ]
-    ]
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "8ec6cc91-7366-4d04-88ce-5c5faa253b5f"
+      }
+    }
   }
 }
