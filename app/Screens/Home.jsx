@@ -1,10 +1,12 @@
 import { FlatList, Text } from "react-native";
 import CardAnimes from "../Components - Screens/CardAnimes";
-import { HomeStyle } from "../style - Home/HomeStyle";
+// import { HomeStyle } from "../style - Home/HomeStyle";
+import { HomeStyle } from "../Style/style - Home/HomeStyle";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useNavigation } from "expo-router";
 import { useEffect, useState } from "react";
 
+export let AboutThisAnime;
 
 export default function HomeScreen() {
 
@@ -51,12 +53,18 @@ export default function HomeScreen() {
         <CardAnimes 
           TitleAnime={item.TitleAnime} 
           FunctionVerInfo={()=>{
-            navigation.navigate(item.LinkScreen)
+            navigation.navigate(item.LinkScreen,{
+              AnimeTitle: item.TitleAnime,
+              BackGround: item.BackGround,
+              AboutSerie: item.ResumenAnime,
+              UrlApi: item.UrlApi,
+              Linkscreen: item.IdCapitulos,
+            });
+            AboutThisAnime = item.TitleAnime;
           }}
           FunctionVerCapi={()=>{
             navigation.navigate(item.IdCapitulos,{
               Anime: item.TitleAnime,
-              image: item.BackGround,
               UrlApi: item.UrlApi,
             });
           }}
