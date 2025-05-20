@@ -27,13 +27,9 @@
       "favicon": "./assets/LogoAnimeApp.jpg"
     },
     "plugins": [
-      "expo-router",
       [
-        "expo-video",
-        {
-          "supportsBackgroundPlayback": true,
-          "supportsPictureInPicture": true
-        }
+        // "expo-router",
+        "expo-local-authentication"
       ]
     ],
     "extra": {
