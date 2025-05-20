@@ -5,11 +5,12 @@ import { ImageBackground } from "react-native";
 import { styleMasInformacion } from "../Style/Style - General/styleMasInformacion";
 import { useRoute } from "@react-navigation/native";
 import { useNavigation } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 
 export default function AboutAnime() {
 
   const route = useRoute();
-  const { BackGround,AboutSerie,UrlApi } = route.params;
+  const { BackGround,AboutSerie,UrlApi,AnimeTitle,ApiPersonajes } = route.params;
   const navigation = useNavigation();
 
   return (
@@ -35,13 +36,19 @@ export default function AboutAnime() {
                 <Text style={styleMasInformacion.TextSagas}>Sagas</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity style={styleMasInformacion.BtnVerPersonajes}>
+              <TouchableOpacity style={styleMasInformacion.BtnVerPersonajes} onPress={()=>{
+                navigation.navigate('Personajes',{
+                  AnimeTitle: AnimeTitle,
+                  ApiPersonajes: ApiPersonajes,
+                })
+              }}>
                 <Text style={styleMasInformacion.TextVerPersonajes}>Ver personajes</Text>
               </TouchableOpacity>
 
             </View>
           </View>
         </View>
+        <StatusBar style="auto"/>
     </SafeAreaProvider>
   )
 };
