@@ -1,6 +1,5 @@
-import { FlatList, Text } from "react-native";
+import { FlatList, Text, View } from "react-native";
 import CardAnimes from "../Components - Screens/CardAnimes";
-// import { HomeStyle } from "../style - Home/HomeStyle";
 import { HomeStyle } from "../Style/style - Home/HomeStyle";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useNavigation } from "expo-router";
@@ -32,9 +31,17 @@ export default function HomeScreen() {
       })
     };
     AnimeDisponibles();
-  })
+
+    
+
+  });
+
+ 
+
+  
 
   if(!StatusAnimeDisponibles){
+    
     return(
     <SafeAreaProvider style={HomeStyle.Container}>
         <Text>Cargando...</Text>
@@ -59,6 +66,7 @@ export default function HomeScreen() {
               AboutSerie: item.ResumenAnime,
               UrlApi: item.UrlApi,
               Linkscreen: item.IdCapitulos,
+              ApiPersonajes: item.PersonajesApi,
             });
             AboutThisAnime = item.TitleAnime;
           }}
